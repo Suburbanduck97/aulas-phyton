@@ -1,0 +1,12 @@
+import os
+
+os.system("cls || clear")
+
+login = input("DIGITE SEU E-MAIL: ")
+senha = input("DIGITE A SENHA: ")
+
+if  login == "senai@gmail.com" and senha == "Senai123":
+    print("BEM-VINDO")
+else:
+    print("LOGIN OU SENHA INCORRETOS")
+    
