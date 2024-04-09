@@ -1,0 +1,40 @@
+import os
+
+os.system("cls || clear")
+
+def somando(numero1 , numero2):
+    soma = numero1 + numero2
+    print(f"\nVALOR DA SOMA: {soma}")
+    return soma
+
+def produto(numero1, numero2):
+    multiplicacao = numero1 * numero2
+    print(f"VALOR DA MULTIPLICAÇÃO: {multiplicacao}")
+    return multiplicacao
+    
+
+def mediaArt(numero1,numero2):
+    media = (numero1 + numero2) / 2
+    print(f"VALOR DA MEDIA: {media}")
+    return media
+
+numero1 = int
+numero2 = int
+
+numero1 = int(input("INSIRA O 1º VALOR: "))
+numero2 = int(input("INSIRA O 2º VALOR: "))
+
+
+if numero1 > numero2:
+    print("O 1º NÚMERO É MAIOR DO QUE O 2º NÚMERO")
+elif numero1 == numero2:
+    print("O NÚMEROS SÃO IGUAIS ENTRE SI")
+else:
+    print("O 2º NÚMERO É MAIOR QUE O 1º NÚMERO")
+
+print("=-"*30, end="")
+
+#Cálculos do sistema
+somando(numero1,numero2)
+produto(numero1,numero2)
+mediaArt(numero1,numero2)
