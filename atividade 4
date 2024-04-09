@@ -1,0 +1,36 @@
+import os
+
+os.system("cls || clear")
+
+numeros = [0,0,0,0,0]
+par = 0
+impar = 0
+somaNumeros = 0
+
+
+for l in range(0,5,1):
+    numeros[l] = int(input(f"INSIRA O {l+1}º VALOR: "))
+
+    somaNumeros += numeros[l]
+
+    if numeros[l] % 2 == 0:
+        par += 1
+    else: 
+        impar += 1
+
+os.system("cls || clear")
+print("=== VALORES INSERIDOS ===")
+for l in range(0,5,1):
+    print(f"{l+1}º VALOR INSERIDO: {numeros[l]}")
+
+print("=== RESULTADOS ===")
+print("\n")
+print(f"SOMA DOS NÚMEROS: {somaNumeros}")
+print(f"QUANTIDADE DE NÚMEROS PARES: {par}")
+print(f"QUANTIDADE DE NÚMEROS ÍMPARES: {impar}")
+
+
+
+
+
+
