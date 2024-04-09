@@ -1,0 +1,37 @@
+import os
+
+os.system("clear")
+
+#declarando variáveis
+nomeAluno : str
+idade : int
+primeiraNota : float
+segundaNota : float
+terceiraNota : float
+quartaNota : float
+soma : float
+media : float
+
+
+nome = input("DIGITE SEU NOME: ")
+primeiraNota = int(input("\nDIGITE A 1ª NOTA: "))
+segundaNota = int(input("DIGITE A 2ª NOTA: "))
+terceiraNota = int(input("DIGITE A 3ª NOTA: "))
+quartaNota = int(input("DIGITE A 4ª NOTA: "))
+
+soma = primeiraNota + segundaNota + terceiraNota + quartaNota 
+media = soma / 4
+
+print("-="*30, end="")
+
+print(f"\nMÉDIA : {media: .1f}")
+if media >= 7:
+    print("\nAPROVADO!")
+elif media >= 5: 
+    print("\nRECUPERAÇÃO")
+elif media >= 4:
+    print("CONSELHO DE CLASSE")
+else: 
+    print("\n=== FIM DO PROGRAMA ==")
+
+
