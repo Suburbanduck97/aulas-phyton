@@ -1,0 +1,27 @@
+import os
+
+os.system("cls || clear")
+
+somaNota = 0.0
+media = 0.0
+resposta = 'S'
+nota = 0.0
+contador = 0
+
+while(resposta == 'S'):
+    nota = float(input(f"Digite a {contador+1}ª Nota: "))
+        
+    resposta = input("Deseja inserir mais uma nota: ")
+    resposta = resposta.upper()
+    
+    if resposta == 'S':
+        somaNota += nota
+        contador+=1
+    else:
+        break
+    
+    os.system("cls || clear")
+    
+media = somaNota / contador
+print(f"\nMédia: {media}")
+print(f"Quantidade de looping: {contador}")
