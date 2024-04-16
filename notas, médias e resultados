@@ -1,0 +1,30 @@
+import os
+
+os.system("cls || clear")
+
+def mediaArt(somaNota):
+    media = somaNota / 3
+    print(f"\nMédia: {media}")
+    if media >= 7:
+        print("Aprovado!")
+    elif media >= 5:
+        print("Recuperação!")
+    else:
+        print("Reprovado!")
+    return media
+        
+nota = 11.0
+somaNota = 0.0
+media = 0.0
+
+while nota < 0 or nota > 10:
+    for i in range(0,3):
+        nota = float(input(f"Digite a {i+1}ª Nota: "))
+        
+        if nota > 0 or nota < 10:
+            somaNota += nota
+            
+mediaArt(somaNota)
+
+    
+    
