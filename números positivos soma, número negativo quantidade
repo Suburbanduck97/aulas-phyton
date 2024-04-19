@@ -1,0 +1,23 @@
+import os
+
+os.system("cls || clear")
+
+numerosReais = []
+numerosNegativos = 0
+somaPositivos = 0.0
+
+for i in range(10):
+    numeros = float(input(f"Digite o {i+1}º Número: "))
+    numerosReais.append(numeros)
+
+    if (numerosReais[i] > 0):
+        somaPositivos += numerosReais[i]
+    else:
+        numerosNegativos+=1
+
+os.system("cls || clear")
+for i in range(len(numerosReais)):
+    print(f"{i+1}º Número inserido: {numerosReais[i]}")
+
+print(f"\nQuantidades de números negativos: {numerosNegativos}")
+print(f"Soma dos Números positivos: {somaPositivos}")       
