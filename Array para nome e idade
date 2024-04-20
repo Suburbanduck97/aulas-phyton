@@ -1,0 +1,18 @@
+import os
+os.system("cls || clear")
+
+nomes = []
+idades = []
+
+for i in range(5):
+    nome = input(f"Digite o {i+1}º nome: ")
+    nomes.append(nome)
+
+    idade = int(input("Digite a idade: "))
+    idades.append(idade)
+
+os.system("cls || clear")
+
+print("=== Nomes e números inseridos ===\n")
+for i in range(len(nomes)):
+    print(f"Pessoa {i+1}: {nomes[i]}, Idade: {idades[i]}")
