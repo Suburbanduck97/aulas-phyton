@@ -1,0 +1,27 @@
+import os
+
+os.system("cls || clear")
+
+def ler_valores(): 
+    valores = [] # Declarando lista
+    while len(valores) < 6: # Enquanto forem inseridos menos que 6 valores na lista a pergunta se repete.
+        try: # Tentatará executar caso a variavél lida não for um valor inteiro.
+            valor = int(input("Digite um valor inteiro, positivo e par: "))
+            if(valor > 0 and valor % 2 == 0): 
+                valores.append(valor) # Se o valor digitado for maior que zero e par, atribua este valor a lista.
+            else:
+                print("Por favor, digite um valor inteiro, positivo e par.") # Caso não corresponda ao comando if, amostre a mensagem.
+        except ValueError:
+            print("Por favor, digite um número inteiro válido.") # Será executado caso o valor digitado não seja da tipagem String
+    return valores # retorno do def
+
+def mostrar_inverso(valores):
+    print("Valores na ordem inversa: ") 
+    for valor in reversed(valores): # Mostrando os valores inseridos de forma decrescente
+        print(valor) 
+
+# Ler os valores
+valores = ler_valores() # Inicializando def ler_valores.
+
+# Mostrar na ordem inversa
+mostrar_inverso(valores) # Inicializando def mostrar_inverso.
