@@ -1,0 +1,31 @@
+import os
+
+os.system("cls || clear")
+
+numeros = []
+numero : int = 1
+numerosPositivosPares : int = 0
+numerosPositivosImpares : int  = 0
+numeroPositivos : int = 0
+numeroNegativos : int = 0
+while(numero != 0):
+    try:
+        numero = int(input(f"Digite o {len(numeros) + 1} número: "))
+        numeros.append(numero)
+        if(numero > 0 and numero % 2 == 0):
+            numerosPositivosPares+=1
+        else:
+            numerosPositivosImpares+=1
+        if(numero > 0):
+            numeroPositivos+=1
+        elif(numero < 0):
+            numeroNegativos+=1
+    except ValueError:
+        print("Digite apenas valores inteiros...")
+print(f"\nQuantidade de números positivos pares: {numeroPositivos}")
+print(f"Quantidade de números positivos impares: {numerosPositivosImpares}")
+print(f"Quantidade de números positivos: {numeroPositivos}")
+print(f"Quantidade de número negativos: {numeroNegativos}")
+print(f"Quantidade de números inseridos: {len(numeros)}")
+
+        
