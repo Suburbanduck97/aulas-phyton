@@ -1,0 +1,59 @@
+import os
+
+os.system("cls || clear")
+
+numeros = []
+pares = 0
+impares = 0
+positivos = 0
+negativos = 0
+mediaNumeros = 0
+mediaPar = 0
+mediaImpar = 0
+somaNumeros = 0
+somaPares = 0
+somaImpares = 0
+contador = 0
+
+for i in range(5):
+    try:   
+        numero = int(input(f"Digite o {i+1}º número: "))
+        somaNumeros += numero
+        contador+=1
+        
+        if(numero % 2 == 0):
+            somaPares += numero
+            pares+=1
+        else:
+            somaImpares += numero
+            impares+=1
+        if(numero > 0):
+            positivos+=1
+        elif(numero < 0):
+            negativos+=1
+        
+        numeros.append(numero)
+        
+        maiorNumero = max(numeros)
+        menorNumero = min(numeros)
+    except:
+        print("Digite valores válidos...")
+    
+# cálculo de médias 
+mediaNumeros = somaNumeros / len(numeros)
+mediaPar = somaPares / pares
+mediaImpar = somaImpares / impares
+print(f"\nQuantidade de números pares: {pares}")
+print(f"Média Pares: {mediaPar}")
+print(f"Quantidade de números ímpares: {impares}")
+print(f"Média Ímpares: {mediaImpar}")
+print(f"Quantidade de números negativos: {negativos}")
+print(f"Quantidade de números positivos: {positivos}")
+print(f"Maior número: {maiorNumero}")
+print(f"Menor número: {menorNumero}")
+print(f"Quantidade de números inseridos: {len(numeros)}")
+print(f"Média de todos números inseridos: {menorNumero}")
+
+
+for numero in reversed(numeros):
+    print(f"{contador-=1}º números: {numero}")
