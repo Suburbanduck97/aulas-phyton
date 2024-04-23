@@ -1,0 +1,34 @@
+import os
+os.system("cls || clear")
+numeros = []
+numero = 1
+while numero != 0:
+    try:    
+        numero = int(input(f"Digite o {len(numeros) + 1}: "))
+        if(numero > 0 and numero % 2 == 0):
+            numerosPositivosPares : int = 0
+            numerosPositivosPares += 1
+        elif(numero > 0 and numero % 2 != 0):
+            numerosPositivosImpares : int = 0
+            numerosPositivosImpares += 1
+        if(numero > 0):
+            numerosPositivos : int = 1
+            numerosPositivos += 1
+        else: 
+            numerosNegativos : int = 1
+            numerosNegativos += 1
+        numeros.append(numero)
+    except:
+        print("Insira um valor da forma inteira...")
+print("\n")
+print("Resultados Positivos:")
+print(f"Quantidade de números Positivos pares: {numerosPositivosPares}")
+print(f"Quantidade de números Positivos ímpares: {numerosPositivosImpares}")
+print(f"Quantidade de números Positivos: {numerosPositivos}")
+print("\n")
+print("Resultados Negativos: ")
+print(f"Quantidade de números Negativos: {numerosNegativos}")
+print("\n")
+print(f"Resultado total: ")
+print(f"Quantidade de números inseridos: {len(numeros)}\n")
+
