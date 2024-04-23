@@ -1,0 +1,36 @@
+import os
+os.system("cls || clear")
+numeros = []
+for i in range(5):
+    numero = int(input(f"Digite {len(numeros) + 1} número: "))
+    numeros.append(numero)
+    somaNumeros : int = 0
+    somaNumeros += numeros[i]
+
+    if(numeros[i] % 2 == 0):
+        numerosPares : int = 0
+        somaPares : int = 0
+        somaPares += numeros[i]
+        numerosPares += 1
+    else:
+        numerosImpares : int = 0
+        somaImpares : int = 0
+        somaImpares += numeros[i]
+        numerosImpares += 1
+    if(numero[i] > 0):
+        numerosPositivos : int = 0
+        numerosPositivos += 1
+    else:
+        numerosNegativos : int = 0
+        numerosNegativos += 1
+    
+    maiorNumero = max(numeros)
+    menorNumero = min(numeros)
+
+print("\n")
+mediaPares : int = 0
+mediaImapares : int = 0
+mediaNumeros : int = 0
+
+mediaNumeros = somaNumeros / len(numeros)
+mediaPares = 
