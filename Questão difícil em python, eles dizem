@@ -1,0 +1,70 @@
+import os
+os.system("cls || clear")
+numeros = []
+ordinais = []
+for i in range(5):
+    try:
+        numero = int(input(f"Digite o {i+1}º número: "))
+        somaNumeros: int = 0
+        somaNumeros += numero
+        # Início de contagem para ordenação de números inseridos.
+        ordenando: int = 0
+        ordenando = i+1
+        ordinais.append(ordenando)
+        # Sistema condicional par ou ímpar.
+        if (numero % 2 == 0):
+            somaPar: int = 0
+            somaPar += numero
+            numerosPares = 0
+            numerosPares += 1
+        else:
+            somaImpar: int = 0
+            somaImpar += numero
+            numerosImpares = 0
+            numerosImpares += 1
+
+        # Sistema condicional para positivos ou negativos.
+        if (numero > 0):
+            numerosPositivos: int = 0
+            numerosPositivos += 1
+        elif (numero < 0):
+            numerosNegativos = 0
+            numerosNegativos += 1
+
+        numeros.append(numero)
+        # Maior e menor número
+        maiorNumero = max(numeros)
+        menorNumero = min(numeros)
+    except ValueError:
+        print("Digite um valor da forma Inteiro...")
+
+# Decrementação da quantidade de elemento da lista ordinais: "ordinais(5 - 1) = 4".
+ordenador = len(ordinais) - 1
+# Decrementação da quantidade de elementos da lista numeros: "numeros(5 - 1) = 4".
+contador = len(numeros) - 1
+
+print("\n=== Exibindo Resultados ===")
+print(f"Quantidade de números Pares: {numerosPares}")
+print(f"Quantidade de números Ímpares: {numerosImpares}")
+print(f"Quantidade de números Positivos: {numerosPositivos}")
+print(f"Quantidade de números Negativos: {numerosNegativos}")
+print(f"Quantidade de números digitados: {len(numeros)}")
+print(f"Maior número: {maiorNumero}")
+print(f"Menor número: {menorNumero}")
+
+# Cálculos de média e exibição
+mediaGeral = somaNumeros / len(numeros)
+print(f"Média dos números digitados: {mediaGeral}")
+mediaPares = somaPar / numerosPares
+print(f"Média dos números pares: {mediaPares}")
+mediaImpares = somaImpar / numerosImpares
+print(f"Média dos números ímpares: {mediaImpares}")
+print("\n=== Números em ordem inversa ===")
+# Enqunto a variável ordenador(4) for >= 0 e contador(4) >= 0, será decrementado um valor da variável.
+while (ordenador >= 0 and contador >= 0):
+    # Teremos: ordinais[posição 4] º número: numeros[posição 4].
+    print(f"{ordinais[ordenador]}º número: {numeros[contador]}")
+    # Decrementa o valor 1, desse modo descendo a posição da lista ordinais.
+    ordenador -= 1
+    # Decrementa o valor 1, desse modo descendo a posição da lista contador.
+    contador -= 1
