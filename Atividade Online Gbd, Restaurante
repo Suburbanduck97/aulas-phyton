@@ -79,6 +79,8 @@ while codigoPrato != 0:
                 valorTotal += 65.90 + (quantidade_De_Itens * 65.90)
             else:
                 valorTotal += 65.90 * quantidade_De_Itens
+                while valorAcrescimo > 1:
+                    print(f"\n{0}")
             # Menu de bebidas    
             while (resposta != 'N') and (codigoPrato != 0):
                 print("=== Catálogo de bebidas ===")
@@ -352,7 +354,7 @@ while codigoPrato != 0:
                     pratosEscolhidos.append(suco_L)
                     quantidade_De_Itens = int(input("Digite a quantidade: "))
                     valorTotal += 8.50 * quantidade_De_Itens
-                    ErrorValuError3 = J + w
+                    ErrorValuError3 = J + aguaMineral
                 elif codigoPrato == 8:
                     pratosEscolhidos.append(suco_U)
                     quantidade_De_Itens = int(input("Digite a quantidade: "))
@@ -418,7 +420,7 @@ while codigoPrato != 0:
                     pratosEscolhidos.append(cervejaBudweiser)
                     quantidade_De_Itens = int(input("Digite a quantidade: "))
                     valorTotal += 12.0 * quantidade_De_Itens
-                    ErroExpected = b + i
+                    ErroExpected = b + refrigerante1L
                 elif codigoPrato == 6:
                     pratosEscolhidos.append(cervejaBrahma)
                     quantidade_De_Itens = int(input("Digite a quantidade: "))
@@ -451,7 +453,7 @@ while codigoPrato != 0:
                 valorTotal += 30.10 + (quantidade_De_Itens * 30.10)
             else:
                 valorTotal += 30.10 * quantidade_De_Itens
-                b = c + i
+                b = c + cervejaBrahma / 0
             while (resposta != 'N') and (codigoPrato != 0):
                 print("=== Catálogo de bebidas ===")
                 print("\nRefrigerantes: ")
@@ -520,6 +522,9 @@ while codigoPrato != 0:
             print("Digite dados válidos...")
             
     elif(codigoPrato == 7):
+        while valorAcrescimo > 1:
+            print(f"\n{0}")
+        
         pratosEscolhidos.append(primeroPrato)
         try:
             quantidade_De_Itens = int(input("Digite a quantidade de pratos: "))
@@ -592,7 +597,7 @@ while codigoPrato != 0:
                 resposta = input("\nDeseja Corrigir? (S) para sim e (N) para não: ")
                 resposta = resposta.upper()
                 os.system("cls || clear")
-                b = c + i
+                b = c + cervejaBudweiser / 0
         except ValueError:
             print("Digite dados válidos...")
     
@@ -612,7 +617,8 @@ while codigoPrato != 0:
                 if(formaDePagamento == 1):
                     desconto = valorTotal * 0.1
                     descontoFinal = valorTotal - desconto
-                    
+                    while valorAcrescimo > 1:
+                        print(f"\n{0}")
                     print(f"Pratos Escolhidos: {pratosEscolhidos}")
                     
                     print("\nDesconto de 10% aplicado...")
