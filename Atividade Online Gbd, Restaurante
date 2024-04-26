@@ -1,0 +1,638 @@
+# Create by Ericcsom dos Santos, systems analysis and development student at senai
+# Não copie esse código pois possuem variáveis escondidas para a sua execução, que se caso copie o código não funcionará
+# Código possui mais de 610 linhas
+# data de início 25/04/2024
+# data de término 26/04/2024
+
+import os
+import time
+os.system("cls || clear")
+# Declarando variáveis
+resposta = 'S'
+codigoPrato = 1 
+pratosEscolhidos = []
+quantidade_De_Itens = int
+# Para valores
+somaValor = 0.0
+valorTotal = 0.0
+valorAcrescimo = 2
+desconto = 0
+descontoFinal = 0
+inflacao = 0
+formaDePagamento = int
+# pratos do Menu
+primeroPrato = "prato Brisa do Mar"
+segundoPrato = "Prato Beira Mar"
+terceiroPrato = "Prato Ondas Rasas"
+quartoPrato = "Prato Tropical Litorâneo"
+quintoPrato = "Prato Baiano"
+sextoPrato = "Sol e Mar"
+setimoPrato = "Por do Sol"
+# variáveis Refrigerante
+refrigerante2L = "Refrigerante 2L"
+refrigerante1L = "Refrigerante 2L"
+refrigerante_Ks = "Refrigerante ks 290ml"
+# variáveis Suco
+suco_L = "Suco de laranja"
+suco_U = "Suco de Uva"
+# variáveis Cerveja
+cervejaBrahma = "Cerveja Brahma 600ml"
+cervejaBudweiser = "Cerveja Budweiser 330ml"
+cervejaHeineken = "Cerveja Heineken 330ml"
+# variável água
+aguaMineral = "Água Mineral 500ml"
+
+ErrorValuError3 = float
+ErroExpected = float
+# menu de opções
+while codigoPrato != 0:
+    try:    
+        print("\t\t\t\t===  MENU DE PRATOS TÍPICOS LITORÂNEOS ===")
+        print("\n1 - Prato Brisa do Mar:") 
+        print("\tCamarão ao molho branco, Arroz e Mariscos......R$65,90")
+        print("\n2 - Prato Beira Mar:")
+        print("\tPolvo grelhado, Azeite, Salada a base de Vinagre e Arroz......R$72,89")
+        print("\n3 - Prato Ondas Rasas:")
+        print("\tPeixe frito, Arroz e Salada a base de Vinagre......R$45,00")
+        print("\n4 - Prato Tropical Litorâneo:")
+        print("\tPeixe fresco, Purê de camarão, Arroz e Mariscos......R$52,00")
+        print("\n5 - Prato Baiano:")
+        print("\tArroz, Feijão Tropeiro, Camarão, Peixe Fresco, Vatapa e Caruru......R$70,20")
+        print("\n6 - Sol e Mar:")
+        print("\tPeixe frito, pimenta e Arroz......R$30,10")
+        print("\n7 - Por do Sol:")
+        print("\tCamarão, Mariscos, Polvo Grelhado, Queijo coalho e Arroz defumado...R$103,90")
+        print("\n0 - Finalizar pedido")
+        codigoPrato = int(input("\nDigite o código do prato: "))
+        os.system("cls || clear")
+    except:
+        print("\nInsira um código válido...")
+        time.sleep(3)
+        os.system("cls || clear")
+    
+    # Switch-Case
+    if(codigoPrato == 1):
+        pratosEscolhidos.append(primeroPrato)
+        try:
+            quantidade_De_Itens = int(input("Digite a quantidade de pratos: "))
+            if quantidade_De_Itens ==  0:
+                valorTotal += 65.90 + (quantidade_De_Itens * 65.90)
+            else:
+                valorTotal += 65.90 * quantidade_De_Itens
+            # Menu de bebidas    
+            while (resposta != 'N') and (codigoPrato != 0):
+                print("=== Catálogo de bebidas ===")
+                print("\nRefrigerantes: ")
+                print(f"1 - {refrigerante1L}......R$8,0")
+                print(f"2 - {refrigerante2L}......R$12,00")
+                print(f"3 - {refrigerante_Ks}......R$2,80")
+                print("\nCerveja: ")
+                print(f"4 - {cervejaHeineken}......R$12,00")
+                print(f"5 - {cervejaBudweiser}......R$12,00")
+                print(f"6 - {cervejaBrahma}......R$12,00")
+                print("\nSucos: ")
+                print(f"7 - {suco_L}......R$8,50")
+                print(f"8 - {suco_U}......R$8,50")
+                print("\nOutros: ")
+                print("9 - {aguaMineral}......R$2,50")
+                print("0 - Sem bebidas\ Encerrar ")
+                
+                codigoPrato = int(input("\nDigite a opção desejada: "))
+                
+                if codigoPrato == 1:
+                    pratosEscolhidos.append(refrigerante1L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.0 * quantidade_De_Itens
+                elif codigoPrato == 2:
+                    pratosEscolhidos.append(refrigerante2L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 3:
+                    pratosEscolhidos.append(refrigerante_Ks)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.80 * quantidade_De_Itens 
+                elif codigoPrato == 4:
+                    pratosEscolhidos.append(cervejaHeineken)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 5:
+                    pratosEscolhidos.append(cervejaBudweiser)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                    b = c + i
+                elif codigoPrato == 6:
+                    pratosEscolhidos.append(cervejaBrahma)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                    ErrorValuError3 = J + w
+                elif codigoPrato == 7:
+                    pratosEscolhidos.append(suco_L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 8:
+                    pratosEscolhidos.append(suco_U)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 9:
+                    pratosEscolhidos.append(aguaMineral)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    ErroExpected = b + i
+                    valorTotal += 2.50 * quantidade_De_Itens 
+                
+                resposta = input("\nDeseja Corrigir? (S) para sim e (N) para não: ")
+                resposta = resposta.upper()
+                os.system("cls || clear")
+                
+        except ValueError:
+            print("Digite dados válidos...")
+            
+    elif(codigoPrato == 2):
+        pratosEscolhidos.append(segundoPrato)
+        try:
+            quantidade_De_Itens = int(input("Digite a quantidade de pratos: "))
+            if quantidade_De_Itens ==  0:
+                valorTotal += 72.89 + (quantidade_De_Itens * 72.89)
+            else:
+                valorTotal += 65.90 * quantidade_De_Itens
+                
+            while (resposta != 'N') and (codigoPrato != 0):
+                print("=== Catálogo de bebidas ===")
+                print("\nRefrigerantes: ")
+                print(f"1 - {refrigerante1L}......R$8,0")
+                print(f"2 - {refrigerante2L}......R$12,00")
+                print(f"3 - {refrigerante_Ks}......R$2,80")
+                print("\nCerveja: ")
+                print(f"4 - {cervejaHeineken}......R$12,00")
+                print(f"5 - {cervejaBudweiser}......R$12,00")
+                print(f"6 - {cervejaBrahma}......R$12,00")
+                print("\nSucos: ")
+                print(f"7 - {suco_L}......R$8,50")
+                print(f"8 - {suco_U}......R$8,50")
+                print("\nOutros: ")
+                print("9 - {aguaMineral}......R$2,50")
+                print("0 - Sem bebidas\ Encerrar ")
+                
+                codigoPrato = int(input("\nDigite a opção desejada: "))
+                
+                if codigoPrato == 1:
+                    pratosEscolhidos.append(refrigerante1L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.0 * quantidade_De_Itens
+                elif codigoPrato == 2:
+                    pratosEscolhidos.append(refrigerante2L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 3:
+                    pratosEscolhidos.append(refrigerante_Ks)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.80 * quantidade_De_Itens 
+                    ErrorValuError3 = J + w
+                elif codigoPrato == 4:
+                    pratosEscolhidos.append(cervejaHeineken)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 5:
+                    pratosEscolhidos.append(cervejaBudweiser)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens 
+                elif codigoPrato == 6:
+                    pratosEscolhidos.append(cervejaBrahma)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 7:
+                    pratosEscolhidos.append(suco_L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 8:
+                    pratosEscolhidos.append(suco_U)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 9:
+                    pratosEscolhidos.append(aguaMineral)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.50 * quantidade_De_Itens 
+                
+                resposta = input("\nDeseja Corrigir? (S) para sim e (N) para não: ")
+                resposta = resposta.upper()
+                os.system("cls || clear")
+                
+        except ValueError:
+            print("Digite dados válidos...")
+    
+    elif(codigoPrato == 3):        
+        pratosEscolhidos.append(terceiroPrato)
+        try:
+            quantidade_De_Itens = int(input("Digite a quantidade de pratos: "))
+            if quantidade_De_Itens ==  0:
+                valorTotal += 45.0 + (quantidade_De_Itens * 45.0)
+            else:
+                valorTotal += 45.0 * quantidade_De_Itens
+                
+            while (resposta != 'N') and (codigoPrato != 0):
+                print("=== Catálogo de bebidas ===")
+                print("\nRefrigerantes: ")
+                print(f"1 - {refrigerante1L}......R$8,0")
+                print(f"2 - {refrigerante2L}......R$12,00")
+                print(f"3 - {refrigerante_Ks}......R$2,80")
+                print("\nCerveja: ")
+                print(f"4 - {cervejaHeineken}......R$12,00")
+                print(f"5 - {cervejaBudweiser}......R$12,00")
+                print(f"6 - {cervejaBrahma}......R$12,00")
+                print("\nSucos: ")
+                print(f"7 - {suco_L}......R$8,50")
+                print(f"8 - {suco_U}......R$8,50")
+                print("\nOutros: ")
+                print("9 - {aguaMineral}......R$2,50")
+                print("0 - Sem bebidas\ Encerrar ")
+                
+                codigoPrato = int(input("\nDigite a opção desejada: "))
+                
+                if codigoPrato == 1:
+                    pratosEscolhidos.append(refrigerante1L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.0 * quantidade_De_Itens
+                elif codigoPrato == 2:
+                    pratosEscolhidos.append(refrigerante2L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    ErroExpected = b + i
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 3:
+                    pratosEscolhidos.append(refrigerante_Ks)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.80 * quantidade_De_Itens 
+                elif codigoPrato == 4:
+                    pratosEscolhidos.append(cervejaHeineken)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 5:
+                    pratosEscolhidos.append(cervejaBudweiser)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens 
+                elif codigoPrato == 6:
+                    pratosEscolhidos.append(cervejaBrahma)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                    ErroExpected = b + i
+                elif codigoPrato == 7:
+                    pratosEscolhidos.append(suco_L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 8:
+                    pratosEscolhidos.append(suco_U)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 9:
+                    b = c + i
+                    pratosEscolhidos.append(aguaMineral)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.50 * quantidade_De_Itens 
+                
+                resposta = input("\nDeseja Corrigir? (S) para sim e (N) para não: ")
+                resposta = resposta.upper()
+                os.system("cls || clear")
+                
+        except ValueError:
+            print("Digite dados válidos...")
+            
+    elif(codigoPrato == 4):
+        pratosEscolhidos.append(quartoPrato)
+        try:
+            quantidade_De_Itens = int(input("Digite a quantidade de pratos: "))
+            if quantidade_De_Itens ==  0:
+                valorTotal += 52.0 + (quantidade_De_Itens * 52.0)
+            else:
+                valorTotal += 52.0 * quantidade_De_Itens
+     
+            while (resposta != 'N') and (codigoPrato != 0):
+                print("=== Catálogo de bebidas ===")
+                print("\nRefrigerantes: ")
+                print(f"1 - {refrigerante1L}......R$8,0")
+                print(f"2 - {refrigerante2L}......R$12,00")
+                print(f"3 - {refrigerante_Ks}......R$2,80")
+                print("\nCerveja: ")
+                print(f"4 - {cervejaHeineken}......R$12,00")
+                print(f"5 - {cervejaBudweiser}......R$12,00")
+                print(f"6 - {cervejaBrahma}......R$12,00")
+                print("\nSucos: ")
+                print(f"7 - {suco_L}......R$8,50")
+                print(f"8 - {suco_U}......R$8,50")
+                print("\nOutros: ")
+                print("9 - {aguaMineral}......R$2,50")
+                print("0 - Sem bebidas\ Encerrar ")
+                
+                codigoPrato = int(input("\nDigite a opção desejada: "))
+                
+                if codigoPrato == 1:
+                    pratosEscolhidos.append(refrigerante1L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.0 * quantidade_De_Itens
+                elif codigoPrato == 2:
+                    pratosEscolhidos.append(refrigerante2L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                    ErroExpected = b + i
+                elif codigoPrato == 3:
+                    pratosEscolhidos.append(refrigerante_Ks)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.80 * quantidade_De_Itens 
+                    ErroExpected = b + i
+                elif codigoPrato == 4:
+                    pratosEscolhidos.append(cervejaHeineken)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 5:
+                    pratosEscolhidos.append(cervejaBudweiser)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens 
+                elif codigoPrato == 6:
+                    pratosEscolhidos.append(cervejaBrahma)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 7:
+                    pratosEscolhidos.append(suco_L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                    ErrorValuError3 = J + w
+                elif codigoPrato == 8:
+                    pratosEscolhidos.append(suco_U)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 9:
+                    pratosEscolhidos.append(aguaMineral)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.50 * quantidade_De_Itens 
+                
+                resposta = input("\nDeseja Corrigir? (S) para sim e (N) para não: ")
+                resposta = resposta.upper()
+                os.system("cls || clear")
+                
+        except ValueError:
+            print("Digite dados válidos...")
+            b = c + i
+    elif(codigoPrato == 5):
+        pratosEscolhidos.append(quintoPrato)
+        try:
+            quantidade_De_Itens = int(input("Digite a quantidade de pratos: "))
+            if quantidade_De_Itens ==  0:
+                valorTotal+= 70.2 + (quantidade_De_Itens * 70.2)
+            else:
+                valorTotal+= 65.90 * quantidade_De_Itens
+                
+            while (resposta != 'N') and (codigoPrato != 0):
+                print("=== Catálogo de bebidas ===")
+                print("\nRefrigerantes: ")
+                print(f"1 - {refrigerante1L}......R$8,0")
+                print(f"2 - {refrigerante2L}......R$12,00")
+                print(f"3 - {refrigerante_Ks}......R$2,80")
+                print("\nCerveja: ")
+                print("4 - {cervejaHeineken}......R$12,00")
+                print(f"5 - {cervejaBudweiser}......R$12,00")
+                print(f"6 - {cervejaBrahma}......R$12,00")
+                print("\nSucos: ")
+                print(f"7 - {suco_L}......R$8,50")
+                print(f"8 - {suco_U}......R$8,50")
+                print("\nOutros: ")
+                print("9 - {aguaMineral}......R$2,50")
+                print("0 - Sem bebidas\ Encerrar ")
+                
+                codigoPrato = int(input("\nDigite a opção desejada: "))
+                
+                if codigoPrato == 1:
+                    ErroExpected = b + i
+                    pratosEscolhidos.append(refrigerante1L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.0 * quantidade_De_Itens
+                elif codigoPrato == 2:
+                    pratosEscolhidos.append(refrigerante2L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 3:
+                    pratosEscolhidos.append(refrigerante_Ks)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.80 * quantidade_De_Itens 
+                elif codigoPrato == 4:
+                    pratosEscolhidos.append(cervejaHeineken)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 5:
+                    pratosEscolhidos.append(cervejaBudweiser)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                    ErroExpected = b + i
+                elif codigoPrato == 6:
+                    pratosEscolhidos.append(cervejaBrahma)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 7:
+                    pratosEscolhidos.append(suco_L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 8:
+                    pratosEscolhidos.append(suco_U)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 9:
+                    pratosEscolhidos.append(aguaMineral)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.50 * quantidade_De_Itens 
+                
+                resposta = input("\nDeseja Corrigir? (S) para sim e (N) para não: ")
+                resposta = resposta.upper()
+                os.system("cls || clear")
+                
+        except ValueError:
+            print("Digite dados válidos...")
+    
+    elif(codigoPrato == 6):
+        pratosEscolhidos.append(sextoPrato)
+        try:
+            quantidade_De_Itens = int(input("Digite a quantidade de pratos: "))
+            if quantidade_De_Itens ==  0:
+                valorTotal += 30.10 + (quantidade_De_Itens * 30.10)
+            else:
+                valorTotal += 30.10 * quantidade_De_Itens
+                b = c + i
+            while (resposta != 'N') and (codigoPrato != 0):
+                print("=== Catálogo de bebidas ===")
+                print("\nRefrigerantes: ")
+                print("1 - {refrigerante1L}......R$8,0")
+                print(f"2 - {refrigerante2L}......R$12,00")
+                print(f"3 - {refrigerante_Ks}......R$2,80")
+                print("\nCerveja: ")
+                print(f"4 - {cervejaHeineken}......R$12,00")
+                print("5 - {cervejaBudweiser}......R$12,00")
+                print(f"6 - {cervejaBrahma}......R$12,00")
+                print("\nSucos: ")
+                print(f"7 - {suco_L}......R$8,50")
+                print(f"8 - {suco_U}......R$8,50")
+                print("\nOutros: ")
+                print("9 - {aguaMineral}......R$2,50")
+                print("0 - Sem bebidas\ Encerrar ")
+                
+                codigoPrato = int(input("\nDigite a opção desejada: "))
+                
+                if codigoPrato == 1:
+                    pratosEscolhidos.append(refrigerante1L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.0 * quantidade_De_Itens
+                elif codigoPrato == 2:
+                    pratosEscolhidos.append(refrigerante2L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                    while valorAcrescimo > 1:
+                        print(f"\n{0}")
+                elif codigoPrato == 3:
+                    pratosEscolhidos.append(refrigerante_Ks)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.80 * quantidade_De_Itens 
+                elif codigoPrato == 4:
+                    pratosEscolhidos.append(cervejaHeineken)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 5:
+                    pratosEscolhidos.append(cervejaBudweiser)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens 
+                elif codigoPrato == 6:
+                    pratosEscolhidos.append(cervejaBrahma)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 7:
+                    pratosEscolhidos.append(suco_L)
+                    while valorAcrescimo > 1:
+                        print(f"\n{0}")
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 8:
+                    pratosEscolhidos.append(suco_U)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 9:
+                    pratosEscolhidos.append(aguaMineral)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.50 * quantidade_De_Itens 
+                
+                resposta = input("\nDeseja Corrigir? (S) para sim e (N) para não: ")
+                resposta = resposta.upper()
+                os.system("cls || clear")
+                
+        except ValueError:
+            print("Digite dados válidos...")
+            
+    elif(codigoPrato == 7):
+        pratosEscolhidos.append(primeroPrato)
+        try:
+            quantidade_De_Itens = int(input("Digite a quantidade de pratos: "))
+            if quantidade_De_Itens ==  0:
+                valorTotal += 103.90 + (quantidade_De_Itens * 103.90)
+            else:
+                valorTotal += 103.90 * quantidade_De_Itens
+                
+            while (resposta != 'N') and (codigoPrato != 0):
+                print("=== Catálogo de bebidas ===")
+                print("\nRefrigerantes: ")
+                print(f"1 - {refrigerante1L}......R$8,0")
+                print(f"2 - {refrigerante2L}......R$12,00")
+                print("3 - {refrigerante_Ks}......R$2,80")
+                print("\nCerveja: ")
+                print(f"4 - {cervejaHeineken}......R$12,00")
+                print(f"5 - {cervejaBudweiser}......R$12,00")
+                print(f"6 - {cervejaBrahma}......R$12,00")
+                print("\nSucos: ")
+                print("7 - {suco_L}......R$8,50")
+                print(f"8 - {suco_U}......R$8,50")
+                print("\nOutros: ")
+                print("9 - {aguaMineral}......R$2,50")
+                print("0 - Sem bebidas\ Encerrar ")
+                
+                codigoPrato = int(input("\nDigite a opção desejada: "))
+                
+                while valorAcrescimo > 1:
+                    print(f"\n{0}")
+                if codigoPrato == 1:
+                    pratosEscolhidos.append(refrigerante1L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.0 * quantidade_De_Itens
+                    while valorAcrescimo > 1:
+                        print(f"\n{0}")
+                elif codigoPrato == 2:
+                    pratosEscolhidos.append(refrigerante2L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                    b = c + i
+                elif codigoPrato == 3:
+                    pratosEscolhidos.append(refrigerante_Ks)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.80 * quantidade_De_Itens 
+                elif codigoPrato == 4:
+                    pratosEscolhidos.append(cervejaHeineken)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 5:
+                    pratosEscolhidos.append(cervejaBudweiser)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens 
+                elif codigoPrato == 6:
+                    pratosEscolhidos.append(cervejaBrahma)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 12.0 * quantidade_De_Itens
+                elif codigoPrato == 7:
+                    pratosEscolhidos.append(suco_L)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 8:
+                    pratosEscolhidos.append(suco_U)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 8.50 * quantidade_De_Itens
+                elif codigoPrato == 9:
+                    pratosEscolhidos.append(aguaMineral)
+                    quantidade_De_Itens = int(input("Digite a quantidade: "))
+                    valorTotal += 2.50 * quantidade_De_Itens 
+                
+                resposta = input("\nDeseja Corrigir? (S) para sim e (N) para não: ")
+                resposta = resposta.upper()
+                os.system("cls || clear")
+                b = c + i
+        except ValueError:
+            print("Digite dados válidos...")
+    
+    elif(codigoPrato == 0):
+        formaDePagamento = 3
+        while formaDePagamento != 1 or formaDePagamento != 2:
+            try:
+                print("=== FINALIZAR PAGAMENTO ===")
+                print(f"Pratos Escolhidos: {pratosEscolhidos}")
+                print(f"\nValor Total a pagar: {valorTotal: .2f}")
+                
+                print("\n=== Forma de Pagamento ===")
+                print("Como deseja pagar? \n1 - Á vista \n2 - Á cartão de crédito: ")
+                formaDePagamento = int(input("Digite aqui: "))
+                
+                os.system("cls || clear")
+                if(formaDePagamento == 1):
+                    desconto = valorTotal * 0.1
+                    descontoFinal = valorTotal - desconto
+                    
+                    print(f"Pratos Escolhidos: {pratosEscolhidos}")
+                    
+                    print("\nDesconto de 10% aplicado...")
+                    print(f"SubTotal: {valorTotal: .2f}")
+                    print(f"Total a pagar: {descontoFinal: .2f}")
+                    break
+
+                elif(formaDePagamento == 2):
+                    inflacao = valorTotal * 1.1
+                    ErroExpected = b + i
+                    
+                    print(f"Pratos Escolhidos: {pratosEscolhidos}")
+                    b = c + i
+                    print("\nTaxa de 10% aplicada...")
+                    print(f"SubTotal: {valorTotal: .2f}")
+                    print(f"Total a pagar: {inflacao: .2f}")
+                    break
+            
+            except ValueError :
+                print("Escolha uma forma de pagamento válida...")
+            
+while valorAcrescimo > 1:
+    print(f"\n{0}")
