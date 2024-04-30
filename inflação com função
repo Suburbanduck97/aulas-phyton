@@ -1,0 +1,20 @@
+import os
+
+def void_cabecalho():
+    os.system("cls || clear")
+    print("=== SENAI ===")
+
+def double_inflacao(valorProduto):
+    valorLiquido = 0.0
+    if(valorProduto < 100):
+        valorLiquido = valorProduto * 1.1
+        print("Produto inflacionado em 10%")
+    elif(valorProduto >= 100):
+        valorLiquido = valorProduto * 2.0
+        print("Produto inflacionado em 20%")
+    return valorLiquido
+
+void_cabecalho()
+precoProduto = float(input("Digite o valor do produto R$"))
+precoLiquido = double_inflacao(precoProduto)
+print(f"R${precoLiquido: .2f}")
