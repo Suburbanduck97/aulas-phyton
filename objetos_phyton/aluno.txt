@@ -1,0 +1,2 @@
+ericsson,50
+hugo,90
