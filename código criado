@@ -9,9 +9,9 @@ def cabecalho():
 
 def salvar_dados_arquivo(lista):
     nome_arquivo = 'my_date.txt'
-    with open(nome_arquivo, 'a', encoding= 'UTF-8') as arquivo:
-        for registro in lista: 
-            arquivo.write(f"{registro.login},{registro.senha}")
+    with open(nome_arquivo, 'w', encoding= 'UTF-8') as arquivo:
+        for Registro in lista: 
+            arquivo.write(f"{Registro.login},{Registro.senha}")
             print("Registros salvos!")
             time.sleep(3)
 
