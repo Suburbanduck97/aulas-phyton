@@ -1,0 +1,89 @@
+import os
+import time
+from dataclasses import dataclass
+
+def cabecalho():
+    os.system("cls || clear")
+    print("Register of system\n")
+
+
+def salvar_dados_arquivo(lista):
+    nome_arquivo = 'my_date.txt'
+    with open(nome_arquivo, 'a', encoding= 'UTF-8') as arquivo:
+        for registro in lista: 
+            arquivo.write(f"{registro.login},{registro.senha}")
+            print("Registros salvos!")
+            time.sleep(3)
+
+def registrando_dados():
+    registro = Registro(
+        login = input("Digite seu e-mail ou número de telefone: ").lower(),
+        senha = input("Digite sua senha: ")
+    )
+    return (registro)
+
+def validando_acesso():
+    tentativas : int = 0
+    while tentativas < 3:
+        usuario = input("Digite o e-mail ou nº de telefone: ").lower()
+        senha_usuario = input("Digite sua senha: ")
+
+        if tentativas == 3:
+            print("Limite de tentativas excedidos, tente novamente após 30s")
+            time.sleep(30)
+            break
+
+        if usuario not in registros or senha_usuario not in registros:
+            print("Username or password is invalid!")
+            tentativas += 1
+        elif usuario in registros and senha_usuario in registros:
+            cabecalho()
+            print("Bem vindo!")
+            print("Software de registros")
+            print("Registros Salvos em arquivo txt!")
+            print("1º Confira se os dados foram corretamente salvos no arquivo.")
+            print("2º Corrija os possíveis erros.")
+            time.sleep(4)
+            return
+        
+def exibindo_dados(lista):
+    arquivo_origem = 'my_date.txt'
+    with open(arquivo_origem,'r') as arquivo:
+        for dados in arquivo:
+            print(dados)
+            time.sleep(3)
+            return
+
+
+def menu():
+    print("1. Register")
+    print("2. Entrar")
+    print("3. Meu perfil")
+    print("4. Fechar programa")
+
+
+@dataclass
+class Registro:
+    login : str
+    senha : str
+
+registros = []
+
+while True:
+    cabecalho()
+    menu()
+    opcoes = int(input("Digite a opção: "))
+    if opcoes == 1:
+        cabecalho()
+        registro = registrando_dados()
+        registros.append(registro)
+    elif opcoes == 2:
+        cabecalho()
+        validando_acesso()
+    elif opcoes == 3:
+        cabecalho()
+        exibindo_dados()
+    elif opcoes == 4:
+        cabecalho()
+        print("Encerrando programa...")
+        break
