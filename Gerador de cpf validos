@@ -51,11 +51,6 @@ def sistema_de_verificacao_cpf():
     print('CPF gerado: ', end='')
     print(*armazenador_cpf, sep='')
 
-    #if digitos_finais[0] == armazenador_cpf[9] and digitos_finais[1] == armazenador_cpf[10]:
-     # print('CPF válido!')
-    #else:
-    #   print('CPF inválido!')
-
 limpa_console()
 armazenador_cpf = []
 cpf_cliente = ''
