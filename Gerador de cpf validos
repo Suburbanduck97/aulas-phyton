@@ -3,7 +3,7 @@ import random
 
 def limpa_console():
     os.system('cls || clear')
-    print('==== Verificador de CPF ====')
+    print('==== Gerador de CPF ====')
 
 def formatando_cpf():
     for digito in cpf_cliente:
