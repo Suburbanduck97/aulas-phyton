@@ -1,0 +1,67 @@
+import os
+import random
+
+def limpa_console():
+    os.system('cls || clear')
+    print('==== Verificador de CPF ====')
+
+def formatando_cpf():
+    for digito in cpf_cliente:
+        if digito.isdigit():
+            armazenador_cpf.append(int(digito))
+        else:
+            continue
+
+def sistema_de_verificacao_cpf():
+    contador_regressivo = 10
+    cpf_calculo = (armazenador_cpf[0:9])
+    digitos_finais = []
+
+    resultado_digito = 0
+    for digito in cpf_calculo:
+        resultado_digito += int(digito) * contador_regressivo
+        contador_regressivo -= 1
+
+    conferir_digito = resultado_digito % 11
+
+    if conferir_digito < 2:
+        digitos_finais.append(0)
+    elif conferir_digito >= 2:
+        digitos_finais.append(11 - conferir_digito)
+    
+    # Para o segundo dígito
+    contador_regressivo = 11
+
+    resultado_digito = 0
+    cpf_calculo.append(digitos_finais[0])
+    for digito in cpf_calculo:
+        resultado_digito += int(digito) * contador_regressivo
+        contador_regressivo -= 1
+
+    conferir_digito = resultado_digito % 11
+
+    if conferir_digito < 2:
+        digitos_finais.append(0)
+    elif conferir_digito >= 2:
+        digitos_finais.append(11 - conferir_digito)
+
+
+    armazenador_cpf.append(digitos_finais[0])
+    armazenador_cpf.append(digitos_finais[1])
+    print('CPF gerado: ', end='')
+    print(*armazenador_cpf, sep='')
+
+    #if digitos_finais[0] == armazenador_cpf[9] and digitos_finais[1] == armazenador_cpf[10]:
+     # print('CPF válido!')
+    #else:
+    #   print('CPF inválido!')
+
+limpa_console()
+armazenador_cpf = []
+cpf_cliente = ''
+enter = input('Aperte qualquer tecla para gerar um cpf: ')
+for i in range(9):
+    cpf_cliente += str(random.randint(0,9))
+formatando_cpf()
+sistema_de_verificacao_cpf()
+
