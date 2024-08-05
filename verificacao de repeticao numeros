@@ -1,0 +1,43 @@
+import os
+
+os.system('cls || clear')
+def recebendo_numeros():
+    print('Digite dez números: ')
+    for i in range(10):
+        numero = input(f'{i+1}º número: ')
+
+        if numero.isdigit():
+            numeros.append(numero)
+        else:
+            print('Digite apenas números!')
+            continue
+
+
+def verificacao_de_repeticao(dez_numeros):
+    numeros_verificados = set()
+    numero_duplicado = -1
+    
+    for numero in dez_numeros:
+        if numero in numeros_verificados:
+            numero_duplicado = numero
+            break
+    
+        numeros_verificados.add(numero)
+    return numero_duplicado
+    
+    
+numeros = []
+recebendo_numeros()
+if len(numeros) < 10:
+    os.system('cls || clear')
+    print('Você não inseriu dez números!')
+    numeros.clear()
+    recebendo_numeros()
+
+os.system('cls || clear')
+resposta_verificacao = verificacao_de_repeticao(numeros)
+print('Observação:')
+print('\nSe retornar um número maior ou igual a zero = Primeiro número com repetição encontrada')
+print('Se retornar -1 = Não houve repetição nos números')
+print(f'\nResposta da verificação: {resposta_verificacao}')
+print(f'\nnúmeros inseridos: {numeros}')
